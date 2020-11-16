@@ -1,21 +1,21 @@
 version: '3'
 services:
   nginx.chitoge.com:
-    image: nginx-security
+    image: webapp
     build:
-      context: /home/chitoge/Lab-Smuggling/nginx
+      context: ./webapp
       dockerfile: Dockerfile
     expose:
       - 80
     ports:
-      - "8082:8080"
+      - "80:80"
     depends_on:
       - "jira.chitoge.com"
 
   jira.chitoge.com:
-    image: jira-lab:v1
+    image: jira-lab
     build:
-      context: /home/chitoge/Lab-Smuggling/jira
+      context: ./jira
       dockerfile: Dockerfile
     expose:
       - 8080
