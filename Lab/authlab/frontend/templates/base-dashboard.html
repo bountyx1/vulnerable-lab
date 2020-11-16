@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css'><link rel="stylesheet" href="{% static "css/style.css" %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="wrapper">
+   <div class="overlay"></div>
+    
+        <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+       <div class="sidebar-brand">
+         <a href="/dashboard">Dashboard</a></div></div>
+       <li><a href="/#home">Home</a></li>
+       <li class="dropdown">
+       <a href="" class="dropdown-toggle"  data-toggle="dropdown">Security & Login <span class="caret"></span></a>
+     <ul class="dropdown-menu animated fadeInLeft" role="menu">
+      <li><a href="#">Security</a></li>
+      <li><a href="#">Login</a></li>
+     
+      </ul>
+      </li>
+      <li><a href="/dashboard/profile#profile">Profile</a></li>
+        {% if is_staff == True %}
+
+        <li><a href="/dashboard/users">users</a></li>
+        {% endif %}
+      <li><a href="" onclick=logout()>signout</a></li>
+      </ul>
+  </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                        <span class="hamb-middle">
+                        </span>
+                                <span class="hamb-bottom"></span>
+            </button>
+
+
+             <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        {% block body %}
+
+                      {% endblock %}                          
+                    </div>
+
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<!-- partial -->,
+<script type="text/javascript">
+  
+
+
+
+</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js'></script>
+<script  src="{% static "js/dashboard.js" %}"></script>
+<script  src="{% static "js/signup.js" %}"></script>
+
+<script  src="/main.js"></script>
+ <div class="footer-copyright text-center py-1">© 2019 Copyright:
+    <a href="https://chitoge.com"> chitoge.com</a>
+  </div>
+
+</body>
+</html>

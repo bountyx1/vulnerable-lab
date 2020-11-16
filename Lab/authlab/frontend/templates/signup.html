@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+  <h2>Register</h2>
+  <form action="/" id="myForm">
+    <div class="form-group col-lg-6">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  
+    
+      <label for="username">Username:</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+
+
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+    </div>
+    
+  </form>
+ &nbsp; &nbsp;  <button  class="btn btn-primary btn-sm" onclick=signup() >Submit</button>
+
+</div>
+
+<script type="text/javascript" src="static/js/signup.js"></script>
+
+{% endblock %}

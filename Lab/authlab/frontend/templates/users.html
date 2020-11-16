@@ -1,0 +1,58 @@
+{% extends 'base-dashboard.html' %}
+{% block body %}
+{% load static %}
+ <table class="table table-condensed ">
+    <thead class="thead-dark">
+      <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>Email</th>
+        <th>is_staff</th>
+      </tr>
+    </thead>
+    <tbody id="user-table">
+    	
+    </tbody>
+</table>
+
+<script type="text/javascript">
+	
+window.onload = function()
+{
+var email = $("#email").val();
+var data = JSON.stringify(data)
+$.ajax({
+    type: 'GET',
+    url: '/api/user',
+    data:data,
+    headers: {"Authorization":"token "+token},
+    contentType: "application/json",
+    dataType: 'json',
+    success: function(data) { 
+    var table = document.getElementById("user-table");
+    function insert(index){
+            var i = 0;
+            var row = table.insertRow(i);
+ 	 	        var uid = row.insertCell(i);
+ 	 	        var username = row.insertCell(i+1);
+ 		        var email = row.insertCell(i+2);
+  		      var is_staff = row.insertCell(i+3);
+  		      uid.innerHTML = data[index].id;
+  		      username.innerHTML = data[index].username;
+  		      email.innerHTML = data[index].email
+  		      is_staff.innerHTML = data[index].is_staff;
+        }
+
+    var i = 0;
+    for(i=0;i<data.length;i++){ insert(i);  }
+
+    }
+
+  });
+
+}
+
+
+
+</script>
+{% endblock %}

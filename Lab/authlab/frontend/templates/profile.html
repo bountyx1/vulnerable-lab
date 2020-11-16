@@ -1,0 +1,35 @@
+{% extends 'base-dashboard.html' %}
+{% block body %}
+{% load static %}
+
+<div class="container">
+  <h2>Update Profile</h2>
+  <form action="/" id="myForm">
+    <div class="form-group col-lg-6">
+
+
+      <input type="hidden" class="form-control" id="uid" value="{{id}}">
+
+
+      <label for="fname">First Name:</label>
+      <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname">
+  
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" disabled value={{email}}>
+  
+    
+      <label for="username">Username:</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" disabled value="{{username}}">
+
+
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+    </div>
+    
+  </form>
+ &nbsp; &nbsp;  <button  class="btn btn-primary btn-sm" onclick=profile_update() >Update</button>
+
+</div>
+
+
+{% endblock %}
