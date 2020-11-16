@@ -19,5 +19,3 @@ services:
       dockerfile: Dockerfile
     expose:
       - 8080
-    ports:
-      - "8081:8080"
