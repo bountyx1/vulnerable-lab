@@ -31,7 +31,7 @@ class ResetPassword(viewsets.ViewSet):
 	def password_reset(self,request,pk=None):
 		email=request.data.get("email")
 		reset = UserReset()
-		response=reset.generate_token(email)
+		response=reset.generate_token(email,request)
 		if response:
 			return Response('{"data":"Success"}')
 		else:
