@@ -11,7 +11,7 @@
 - [IDOR]()
 - [Mass-Assignment](https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html)
 - [Password-Reset]()
-- [X-Forwarded-For]
+- [X-Forwarded-For]()
 - [object Formating]()
 - [XSS]()
 - [Debug Mode env Variable leak]()
