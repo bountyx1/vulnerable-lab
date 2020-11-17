@@ -11,7 +11,11 @@
 - [IDOR]()
 - [Mass-Assignment](https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html)
 - [Password-Reset]()
-
+- [X-Forwarded-For]
+- [object Formating]()
+- [XSS]()
+- [Debug Mode env Variable leak]()
+- [Host Header]()
 
 # Todo
 - Fix password reset 
